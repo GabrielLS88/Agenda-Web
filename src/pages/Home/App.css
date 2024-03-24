@@ -1,0 +1,58 @@
+.bodyHome{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    margin-bottom: 3rem;
+    margin-top: 5rem;
+}
+.blocoMensagem{
+    width: 95%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.251);
+    margin-top: 2rem;
+    border-radius: 0.4rem;
+    
+}
+
+.blocoMensagem p {
+    color: black;
+    font-size: 1.5rem;
+    text-align: start;
+}
+
+.blocoMensagem h1 {
+    color: black;
+    font-size: 1.5rem;
+    text-align: start;
+}
+
+.agendamentoHistoria{
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+}
+
+.historicoHistoria{
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+}
+
+.graficosDiv{
+    width: 50%;
+    height: auto;
+    margin-top: 5rem;
+}
+
+.graficosDiv h1{
+    color: black;
+}
