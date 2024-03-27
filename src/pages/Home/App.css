@@ -10,7 +10,7 @@
     margin-top: 5rem;
 }
 .blocoMensagem{
-    width: 95%;
+    width: 90%;
     height: auto;
     display: flex;
     justify-content: center;
@@ -47,12 +47,81 @@
     margin-top: 2rem;
 }
 
-.graficosDiv{
-    width: 50%;
-    height: auto;
-    margin-top: 5rem;
+
+.blocosSemanal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 4rem;
+    background-color: white;
 }
 
-.graficosDiv h1{
-    color: black;
+.divBlocos{
+    width: 100%;
+    height: auto;
+}
+
+.divBarraProgress{
+    width: 100%;
+    height: auto;
+    padding: 0rem 4rem;
+    margin-bottom: 2rem;
+}
+
+.divTitulo{
+   width: 90%;
+   height: auto;
+   display: flex;
+   align-items: center;
+   justify-content: start;
+
+}
+
+#tituloBlocos{
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #30950be7 ;
+}
+
+#textExplicativo{
+    font-size: 1.3rem;
+   }
+
+   #tituloExplicacao{
+    font-size: 1.4rem;
+    font-weight: bold;
+    }
+
+@media (min-width: 260px) and (max-width: 600px) { 
+   #textExplicativo{
+    font-size: 1rem;
+   }
+
+   #tituloExplicacao{
+    font-size: 1rem;
+    }
+
+   .blocoMensagem{
+    margin-top: 1rem;
+    }
+
+    .agendamentoHistoria{
+        margin-top: 1rem;
+    }
+    
+    .historicoHistoria{
+        margin-top: 1rem;
+    }
+
+    .blocosSemanal{
+        margin-top: 1rem;
+        background-color: white;
+    }
+
+    #tituloBlocos{
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
 }

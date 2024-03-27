@@ -32,9 +32,13 @@
     padding: 1rem;
     font-weight: bold;
 }
-p{
+#pipeSeparadorMenu{
     font-size: 2rem;
     color: white;
+    text-align: center;
+    padding: 1rem 0rem;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 @media (max-width: 600px) { 

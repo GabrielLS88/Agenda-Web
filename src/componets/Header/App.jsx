@@ -7,9 +7,9 @@ function Header(){
       <div className="header">
         <div className="links">
           <Link id="linkMenu" to="/">Home</Link>
-          <p>|</p>
+          <p id="pipeSeparadorMenu">|</p>
           <Link id="linkMenu" to="/cliente">Agendamento</Link>
-          <p>|</p>
+          <p id="pipeSeparadorMenu">|</p>
           <Link id="linkMenu" to="/horario">Histórico</Link>  
         </div>
       </div>
