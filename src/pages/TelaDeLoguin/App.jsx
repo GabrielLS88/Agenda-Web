@@ -6,7 +6,9 @@ import './App.css'
 function Loguin() {
   return (
     <div className='bodyLoguin'>
-      
+      <div className="view">
+        
+      </div>
     </div>
   )
 }

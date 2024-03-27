@@ -6,7 +6,7 @@ function Header(){
     <header>
       <div className="header">
         <div className="links">
-          <Link id="linkMenu" to="/">Home</Link>
+          <Link id="linkMenu" to="/home">Home</Link>
           <p id="pipeSeparadorMenu">|</p>
           <Link id="linkMenu" to="/cliente">Agendamento</Link>
           <p id="pipeSeparadorMenu">|</p>
