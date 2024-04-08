@@ -72,46 +72,49 @@ const Blocos = () => {
     return grupoOrdenado;
   };
 
-
   const processarDados = (grupoPorData) => {
     const elementosRenderizados = [];
-
-    for (const dataBr in grupoPorData) {
-      elementosRenderizados.push(
-        <div className="divPrincipal" key={dataBr}>
-          <div className="nomeDataDia">{dataBr}</div>
-          <div className="containerBloco">
-            {grupoPorData[dataBr].map((item, index) => (
-              <div key={index} className="divBloco">
-                <div className='espacoDosBlocos'>
-                  <div className="ladoDeCima">
-                    <div id="nomeCliente" className="blocoNome">{item.nome}</div>
-                    <div id="horarioInicial" className="blocoHoraInicial"><div id='escritahora'>Horário das</div>{item.horarioinicial ? item.horarioinicial.replace(/-/g, ':') : ''}<div id='escritahora'> ás </div>{item.horariofinal ? item.horariofinal.replace(/-/g, ':') : ''}</div>
-                    <div className="valorServico"><div id='escritaDiv'>Valor:</div>R${item.valor}</div>
-                  </div>
+  
+    if (Object.keys(grupoPorData).length > 0) {
+      for (const dataBr in grupoPorData) {
+        elementosRenderizados.push(
+          <div className="divPrincipal" key={dataBr}>
+            <div className="nomeDataDia">{dataBr}</div>
+            <div className="containerBloco">
+              {grupoPorData[dataBr].map((item, index) => (
+                <div key={`${dataBr}-${index}`} className="divBloco">
+                  <div className='espacoDosBlocos'>
+                    <div className="ladoDeCima">
+                      <div id="nomeCliente" className="blocoNome">{item.nome}</div>
+                      <div id="horarioInicial" className="blocoHoraInicial"><div id='escritahora'>Horário das</div>{item.horarioinicial ? item.horarioinicial.replace(/-/g, ':') : ''}<div id='escritahora'> ás </div>{item.horariofinal ? item.horariofinal.replace(/-/g, ':') : ''}</div>
+                      <div className="valorServico"><div id='escritaDiv'>Valor:</div>R${item.valor}</div>
+                    </div>
                     <div id="ladoDeBaixo">
                       <div className="descricao"><div id='escritaDiv'>Descrição:</div>{item.descricao}</div>
                       <div className="formaDePagamento"><div id='escritaDiv'>Forma de pagamento:</div>{item.pagamento}</div>
                     </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        );
+      }
+    } else if(Object.keys(grupoPorData).length == 0) {
+      elementosRenderizados.push(
+        <div className='notData'><h1>Não possui clientes agendados</h1></div>
       );
     }
-
+  
     return elementosRenderizados;
   };
+  
 
   return (
     <div>
-      {/* Renderizar os dados conforme necessário */}
-      {data.length > 0 && (
         <div>
           {processarDados(ordenarPorData(groupDataByDate(data)))}
         </div>
-      )}
     </div>
   );
 };

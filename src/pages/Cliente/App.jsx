@@ -13,11 +13,15 @@ function Cliente() {
     const descricao = document.getElementById('descricaoInput').value;
     const pagamento = document.getElementById('opcoesPagamento').value;
 
-    //API
-    const apiUrl =
-      'https://script.google.com/macros/s/AKfycbxNaQ9ty8v0t7N0QHX9RdIdpfeeB7G5kf6-uy0MgpkBMDP_n-MUR_xryGjnkpHioHCg3Q/exec';
+    console.log(nomecliente,data)
 
-    // Parametros para requisição de criarção
+    if(nomecliente == '' || data == '' || valor == '' || horariofinal == '' || horarioinicial == '' || descricao == '' || pagamento == ''){
+      alert("Alguns dados não foram preenchidos")
+    } else{
+
+    const apiUrl =
+    'https://script.google.com/macros/s/AKfycbxNaQ9ty8v0t7N0QHX9RdIdpfeeB7G5kf6-uy0MgpkBMDP_n-MUR_xryGjnkpHioHCg3Q/exec';
+
     const params = new URLSearchParams({
       action: 'Create',
       token_acess: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c',
@@ -30,21 +34,23 @@ function Cliente() {
       pagamento,
     });
 
-    try {
-      // Make the API request
-      const response = await fetch(`${apiUrl}?${params.toString()}`, {
-        method: 'GET',
-      });
+  try {
+    const response = await fetch(`${apiUrl}?${params.toString()}`, {
+      method: 'GET',
+    });
 
-      // Handle the response
-      if (response.ok) {
-        alert('Cadastro feito com sucesso');
-      } else {
-        alert('Falha no cadastro! Tente novamente');
-      }
-    } catch (error) {
-      alert('Error:', error);
+    if (response.ok) {
+      alert('Cadastro feito com sucesso');
+    } else {
+      alert('Falha no cadastro! Tente novamente');
     }
+
+  } catch (error) {
+    alert('Error:', error);
+  }
+  }
+
+    
   };
 
   return (

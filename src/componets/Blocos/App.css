@@ -41,6 +41,18 @@
     width: 100%;
 }
 
+.notData{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notData h1{
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
 
 /* Separadores do bloco */
 .ladoDeCima{

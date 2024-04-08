@@ -114,6 +114,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     border-radius: 0.2rem;
     cursor: pointer;
     margin-top: 1rem;
+    color: white;
 }
 
 #btnAgendar{
