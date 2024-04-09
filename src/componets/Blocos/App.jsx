@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './App.css';
 
 const Blocos = () => {
-  const url = 'https://script.google.com/macros/s/AKfycbxNaQ9ty8v0t7N0QHX9RdIdpfeeB7G5kf6-uy0MgpkBMDP_n-MUR_xryGjnkpHioHCg3Q/exec';
+  const url = 'https://script.google.com/macros/s/AKfycbzaikHQz7zPoLHMf8FP_XqgC5yzKlbmaameaHED2Gt0QiWq71_M-FkVdl1bc4DyksfyMg/exec';
   const action = 'Read';
   const token_acess = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c';
 
