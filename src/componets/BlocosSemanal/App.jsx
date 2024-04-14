@@ -83,51 +83,53 @@ const Blocos = () => {
 
   const processarDados = (grupoPorData, dataAtual, diasDasDatas) => {
     const elementosRenderizados = [];
+      for (let i = 0; i < diasDasDatas.length; i++) {
+        const data = new Date(dataAtual);
+        data.setDate(data.getDate() + diasDasDatas[i]);
+        const dataBr = inverterDataIsoParaBr(data.toISOString());
 
-    for (let i = 0; i < diasDasDatas.length; i++) {
-      const data = new Date(dataAtual);
-      data.setDate(data.getDate() + diasDasDatas[i]);
-      const dataBr = inverterDataIsoParaBr(data.toISOString());
-
-      if (grupoPorData[dataBr]) {
-        elementosRenderizados.push(
-          <div className="divPrincipal" key={dataBr}>
-            <div className="nomeDataDia">{dataBr}</div>
-            <div className="containerBloco">
-              {grupoPorData[dataBr].map((item, index) => (
-                <div key={index} className="divBloco">
-                  <div className='espacoDosBlocos'>
-                    <div className="ladoDeCima">
-                      <div id="nomeCliente" className="blocoNome">{item.nome}</div>
-                      <div id="horarioInicial" className="blocoHoraInicial"><div id='escritahora'>Horário das</div>{item.horarioinicial ? item.horarioinicial.replace(/-/g, ':') : ''}<div id='escritahora'> ás </div>{item.horariofinal ? item.horariofinal.replace(/-/g, ':') : ''}</div>
-                      <div className="valorServico"><div id='escritaDiv'>Valor:</div>R${item.valor}</div>
-                    </div>
-                    <div id="ladoDeBaixo">
-                      <div className="descricao"><div id='escritaDiv'>Descrição:</div>{item.descricao}</div>
-                      <div className="formaDePagamento"><div id='escritaDiv'>Forma de pagamento:</div>{item.pagamento}</div>
+        if (grupoPorData[dataBr]) {
+          elementosRenderizados.push(
+            <div className="divPrincipal" key={dataBr}>
+              <div className="nomeDataDia">{dataBr}</div>
+              <div className="containerBloco">
+                {grupoPorData[dataBr].map((item, index) => (
+                  <div key={index} className="divBloco">
+                    <div className='espacoDosBlocos'>
+                      <div className="ladoDeCima">
+                        <div id="nomeCliente" className="blocoNome">{item.nome}</div>
+                        <div id="horarioInicial" className="blocoHoraInicial"><div id='escritahora'>Horário das</div>{item.horarioinicial ? item.horarioinicial.replace(/-/g, ':') : ''}<div id='escritahora'> ás </div>{item.horariofinal ? item.horariofinal.replace(/-/g, ':') : ''}</div>
+                        <div className="valorServico"><div id='escritaDiv'>Valor:</div>R${item.valor}</div>
+                      </div>
+                      <div id="ladoDeBaixo">
+                        <div className="descricao"><div id='escritaDiv'>Descrição:</div>{item.descricao}</div>
+                        <div className="formaDePagamento"><div id='escritaDiv'>Forma de pagamento:</div>{item.pagamento}</div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        );
+          );
+        }
       }
+      if(elementosRenderizados.length == 0) {
+        elementosRenderizados.push(
+          <div className='notData'><h1>Não possui clientes agendados</h1></div>
+        );
     }
-
     return elementosRenderizados;
   };
 
   return (
     <div>
       {/* Renderizar os dados conforme necessário */}
-      {data.length > 0 && (
+      {data.length >= 0 && (
         <div>
           {processarDados(ordenarPorData(groupDataByDate(data)), obterDataAtual(), diasDasDatas)}
         </div>
       )}
     </div>
-  );
-};
+  );}
 
 export default Blocos;
