@@ -5,13 +5,74 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: darkgrey;
+    margin-top: 10rem;
+}
+
+.tituloLogin{
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin:1rem 0rem ;
 }
 
 .view{
     width: 50%;
-    height: 20rem;
-    background-color: aqua;
-    border-radius: 1rem;
-    margin:10rem 0rem ;
+    height: auto;
+    background-color: #00BF63;
+    padding: 1rem;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.1rem;
+}
+
+#userIP{
+    width: 50%;
+    height: 3rem;
+    padding: 0.2rem;
+    background-color: transparent;
+    border: 0.1rem solid white;
+    border-radius: 0.2rem;
+    color: white;
+    outline: none;
+    margin: 0.3rem;
+}
+
+#userIP::placeholder{
+    color: white;
+}
+
+#passwordIP{
+    width: 50%;
+    height: 3rem;
+    padding: 0.2rem;
+    background-color: transparent;
+    border: 0.1rem solid white;
+    border-radius: 0.2rem;
+    color: white;
+    outline: none;
+    margin: 0.3rem;
+}
+
+#passwordIP::placeholder{
+    color: white;
+}
+
+#btnLoguin{
+    width: 50%;
+    height: 3rem;
+    padding: 0.2rem;
+    background-color: white;
+    border: none;
+    border-radius: 0.2rem;
+    color: black;
+    outline: none;
+    margin: 0.3rem;
+}
+
+#btnLoguin:hover{
+    background-color: #E8751A;
+    color: white;
 }
